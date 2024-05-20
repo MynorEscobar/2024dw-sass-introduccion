@@ -1,0 +1,48 @@
+// Variables
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$font-stack: Helvetica, sans-serif;
+
+// Mixin
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+// Uso de variables y mixin
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+
+.container {
+  background: $secondary-color;
+  @include border-radius(5px);
+  padding: 20px;
+  margin: 10px;
+}
+
+// Anidación
+nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      display: inline-block;
+      margin-right: 10px;
+
+      a {
+        text-decoration: none;
+        color: $primary-color;
+
+        &:hover {
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+}
